@@ -1,4 +1,4 @@
-const monoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const uri = 'mongodb+srv://user_c214:LQbM3cK8nFwocN4J@cluster0.zjmah4e.mongodb.net/?retryWrites=true&w=majority'
 
@@ -23,8 +23,8 @@ const UserSchema = new Schema({
     senha: String,
 });
 
-const UserModel = mongoose.model('UserModel', UserSchema);
+const MovieModel = mongoose.model('MovieModel', UserSchema);
 
 module.exports = {
-    UserModel,
+    MovieModel,
 };
