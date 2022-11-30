@@ -9,23 +9,23 @@ mongoose.connect(uri, {
 
 const { Schema } = mongoose;
 
-const UserSchema = new Schema({
+const CarSchema = new Schema({
     id: {
         type: String,
         index: true,
         unique: true,
     },
-    nome: {
+    modelo: {
         type: String,
         unique: true,
     },
-    produtora: String,
-    atores: String,
-    ano: String,
+    fabricante: String,
+    placa: String,
+    cor: String,
 });
 
-const UserModel = mongoose.model('UserModel', UserSchema);
+const CarModel = mongoose.model('CarModel', CarSchema);
 
 module.exports = {
-    UserModel,
+    CarModel,
 };

@@ -1,9 +1,9 @@
-const { UserModel } = require('../infrastructure/database');
+const { CarModel } = require('../infrastructure/database');
 
-const MovieRepository = {
+const CarRepository = {
     async create(data) {
         try {
-            const model = new UserModel(data);
+            const model = new CarModel(data);
             const response = await model.save();
             return response.toObject();
         } catch (e) {
@@ -18,7 +18,7 @@ const MovieRepository = {
             };
             const options = { new: true };
             const filter = { nome: data.nome };
-            const result = await UserModel.findOneAndUpdate(filter, update, options).exec();
+            const result = await CarModel.findOneAndUpdate(filter, update, options).exec();
             if (result === null) return []
             return result.toObject();
         } catch (e) {
@@ -28,7 +28,7 @@ const MovieRepository = {
 
     async list() {
         try {
-            const result = await UserModel.find().exec();
+            const result = await CarModel.find().exec();
             return result;
         } catch (error) {
             return error;
@@ -37,7 +37,7 @@ const MovieRepository = {
 
     async getByEmail(data) {
         try {
-            const result = await UserModel.findOne({ nome: data.nome }).exec();
+            const result = await CarModel.findOne({ nome: data.nome }).exec();
             return result;
         } catch (e) {
             return e;
@@ -46,7 +46,7 @@ const MovieRepository = {
 
     async delete(data) {
         try {
-            const result = await UserModel.deleteOne({ nome: data.nome }).exec();
+            const result = await CarModel.deleteOne({ nome: data.nome }).exec();
             return result.deletedCount;
         } catch (error) {
             return error;
@@ -54,4 +54,4 @@ const MovieRepository = {
     },
 };
 
-module.exports = MovieRepository;
+module.exports = CarRepository;

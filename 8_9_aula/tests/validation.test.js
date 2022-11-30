@@ -3,27 +3,27 @@ const Validation = require('../src/utils/validation');
 
 it('Caso válido', () => {
     const result = Validation.create({
-        nome: "OLA",
-        produtora: "sony",
-        atores: "tonico e tinoco",
-        ano:"1995"
+        modelo: "Fusca",
+        fabricante: "Volkswagen",
+        placa: "ABC-123",
+        cor:"verde"
     });
     expect(result).toEqual(undefined);
 });
 
-it('Caso inválido - criar sem o parâmetro nome', () => {
+it('Caso inválido - criar sem o parâmetro modelo', () => {
     const result = Validation.create({
-        produtora: "sony",
-        atores: "tonico e tinoco",
-        ano:"1995"
+        fabricante: "Volkswagen",
+        placa: "ABC-123",
+        cor:"verde"
     });
     expect(result.name).toEqual(Constants.ErrorValidation.name);
 });
-it('Caso inválido - criar sem o parâmetro produtora', () => {
+it('Caso inválido - criar sem o parâmetro fabricante', () => {
     const result = Validation.create({
-        nome: "OLA",
-        atores: "tonico e tinoco",
-        ano:"1995"
+        modelo: "Fusca",
+        placa: "ABC-123",
+        cor:"verde"
     });
     expect(result.name).toEqual(Constants.ErrorValidation.name);
 });

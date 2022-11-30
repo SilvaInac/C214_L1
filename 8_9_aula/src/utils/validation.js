@@ -1,6 +1,6 @@
 const validate = require('validate.js');
 const Constants = require('./constants');
-const Constraints = require('./movie_validation');
+const Constraints = require('./car_validation');
 
 const Validation = {
     create(data) {

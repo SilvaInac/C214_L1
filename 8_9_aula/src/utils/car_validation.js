@@ -1,23 +1,23 @@
 const create = {
-    nome: {
+    modelo: {
         presence: {
             allowEmpty: false,
         },
         type: 'string',
     },
-    produtora: {
+    fabricante: {
         presence: {
             allowEmpty: false,
         },
         type: 'string',
     },
-    atores: {
+    placa: {
         presence: {
             allowEmpty: false,
         },
         type: 'string',
     },
-    ano: {
+    cor: {
         presence: {
             allowEmpty: false,
         },
@@ -26,25 +26,25 @@ const create = {
 };
 
 const update = {
-    nome: {
+    modelo: {
         presence: {
             allowEmpty: false,
         },
         type: 'string',
     },
-    produtora: {
+    fabricante: {
         presence: {
             allowEmpty: false,
         },
         type: 'string',
     },
-    atores: {
+    placa: {
         presence: {
             allowEmpty: false,
         },
         type: 'string',
     },
-    ano: {
+    cor: {
         presence: {
             allowEmpty: false,
         },
@@ -53,7 +53,7 @@ const update = {
 };
 
 const get = {
-    nome: {
+    modelo: {
         presence: {
             allowEmpty: false,
         },
@@ -62,7 +62,7 @@ const get = {
 };
 
 const deleteBy = {
-    nome: {
+    modelo: {
         presence: {
             allowEmpty: false,
         },

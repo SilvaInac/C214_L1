@@ -1,7 +1,7 @@
-const User = require('../application/movie_service');
+const User = require('../application/car_service');
 const Utils = require('../utils/utils');
 
-const route = '/movie';
+const route = '/car';
 
 module.exports = (app) => {
     app.post(`${route}/create`, async (req, res) => {
@@ -19,7 +19,7 @@ module.exports = (app) => {
         res.status(Utils.responseStatus(response.name));
         res.json(response);
     });
-    app.patch(`${route}/listUser`, async (req, res) => {
+    app.patch(`${route}/listCar`, async (req, res) => {
         const response = await User.listByEmail(req.body);
         res.status(Utils.responseStatus(response.name));
         res.json(response);
