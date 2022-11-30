@@ -4,7 +4,7 @@ const uri = `mongodb+srv://user_c214:admin@cluster0.zjmah4e.mongodb.net/?retryWr
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: false,
 });
 
 const { Schema } = mongoose;
