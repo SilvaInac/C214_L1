@@ -1,4 +1,3 @@
-
 const Constants = {
     ErrorValidation: {
         name: 'ValidationError',

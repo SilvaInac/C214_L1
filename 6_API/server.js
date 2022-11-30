@@ -1,4 +1,3 @@
-
 require('./src/infrastructure/database');
 const app = require('./src/infrastructure/rest_server');
 

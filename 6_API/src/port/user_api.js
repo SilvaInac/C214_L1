@@ -1,11 +1,11 @@
-const Movie = require('../application/movie_service');
+const User = require('../application/user_service');
 const Utils = require('../utils/utils');
 
-const route = '/movie';
+const route = '/user';
 
 module.exports = (app) => {
     app.post(`${route}/create`, async (req, res) => {
-        const response = await Movie.create(req.body);
+        const response = await User.create(req.body);
         res.status(Utils.responseStatus(response.name));
         res.json(response);
     });
@@ -15,17 +15,21 @@ module.exports = (app) => {
         res.json(response);
     });
     app.get(`${route}/list`, async (req, res) => {
-        const response = await Movie.list();
+        const response = await User.list();
         res.status(Utils.responseStatus(response.name));
         res.json(response);
     });
-    app.delete(`${route}/delete/:movie`, async (req, res) => {
+    app.patch(`${route}/listUser`, async (req, res) => {
+        const response = await User.listByEmail(req.body);
+        res.status(Utils.responseStatus(response.name));
+        res.json(response);
+    });
+    app.delete(`${route}/delete/:email`, async (req, res) => {
         const data = req.body;
-        const { movie } = req.params;
-        data.movie = movie;
+        const { email } = req.params;
+        data.email = email;
         const response = await User.delete(data);
         res.status(Utils.responseStatus(response.name));
         res.json(response);
     });
-
 };
