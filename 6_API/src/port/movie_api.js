@@ -1,7 +1,7 @@
-const User = require('../application/user_service');
+const User = require('../application/movie_service');
 const Utils = require('../utils/utils');
 
-const route = '/user';
+const route = '/movie';
 
 module.exports = (app) => {
     app.post(`${route}/create`, async (req, res) => {
@@ -24,10 +24,10 @@ module.exports = (app) => {
         res.status(Utils.responseStatus(response.name));
         res.json(response);
     });
-    app.delete(`${route}/delete/:email`, async (req, res) => {
+    app.delete(`${route}/delete/:nome`, async (req, res) => {
         const data = req.body;
-        const { email } = req.params;
-        data.email = email;
+        const { nome } = req.params;
+        data.nome = nome;
         const response = await User.delete(data);
         res.status(Utils.responseStatus(response.name));
         res.json(response);

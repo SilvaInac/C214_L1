@@ -1,6 +1,6 @@
 const { UserModel } = require('../infrastructure/database');
 
-const UserRepository = {
+const MovieRepository = {
     async create(data) {
         try {
             const model = new UserModel(data);
@@ -17,7 +17,7 @@ const UserRepository = {
                 nome: data.nome,
             };
             const options = { new: true };
-            const filter = { email: data.email };
+            const filter = { nome: data.nome };
             const result = await UserModel.findOneAndUpdate(filter, update, options).exec();
             if (result === null) return []
             return result.toObject();
@@ -37,7 +37,7 @@ const UserRepository = {
 
     async getByEmail(data) {
         try {
-            const result = await UserModel.findOne({ email: data.email }).exec();
+            const result = await UserModel.findOne({ nome: data.nome }).exec();
             return result;
         } catch (e) {
             return e;
@@ -46,7 +46,7 @@ const UserRepository = {
 
     async delete(data) {
         try {
-            const result = await UserModel.deleteOne({ email: data.email }).exec();
+            const result = await UserModel.deleteOne({ nome: data.nome }).exec();
             return result.deletedCount;
         } catch (error) {
             return error;
@@ -54,4 +54,4 @@ const UserRepository = {
     },
 };
 
-module.exports = UserRepository;
+module.exports = MovieRepository;

@@ -5,13 +5,19 @@ const create = {
         },
         type: 'string',
     },
-    email: {
+    produtora: {
         presence: {
             allowEmpty: false,
         },
         type: 'string',
     },
-    senha: {
+    atores: {
+        presence: {
+            allowEmpty: false,
+        },
+        type: 'string',
+    },
+    ano: {
         presence: {
             allowEmpty: false,
         },
@@ -26,7 +32,19 @@ const update = {
         },
         type: 'string',
     },
-    email: {
+    produtora: {
+        presence: {
+            allowEmpty: false,
+        },
+        type: 'string',
+    },
+    atores: {
+        presence: {
+            allowEmpty: false,
+        },
+        type: 'string',
+    },
+    ano: {
         presence: {
             allowEmpty: false,
         },
@@ -35,7 +53,7 @@ const update = {
 };
 
 const get = {
-    email: {
+    nome: {
         presence: {
             allowEmpty: false,
         },
@@ -44,7 +62,7 @@ const get = {
 };
 
 const deleteBy = {
-    email: {
+    nome: {
         presence: {
             allowEmpty: false,
         },
